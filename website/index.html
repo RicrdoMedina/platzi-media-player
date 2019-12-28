@@ -16,32 +16,9 @@
       <video class="movie">
         <source src="./assets/BigBuckBunny.mp4" />
       </video>
-      <button>Play/Pause</button>
+      <button id="playOrPause">Play/Pause</button>
+      <button id="muteOrUnmute">Mute/Unmute</button>
     </main>
-    <script>
-      const video = document.querySelector("video");
-      const button = document.querySelector("button");
-
-      function MediaPlayer(config) {
-        this.media = config.el;
-      }
-
-      MediaPlayer.prototype.play = function() {
-        this.media.play();
-      };
-
-      MediaPlayer.prototype.pause = function() {
-        this.media.pause();
-      };
-
-      MediaPlayer.prototype.isPaused = function() {
-        return this.media.paused;
-      };
-
-      const player = new MediaPlayer({ el: video });
-
-      button.onclick = () =>
-        player.isPaused() ? player.play() : player.pause();
-    </script>
+    <script type="module" src="./assets/index.js"></script>
   </body>
 </html>
