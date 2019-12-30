@@ -22,14 +22,14 @@ self.addEventListener("fetch", event => {
 async function precache() {
   const cache = await caches.open(VERSION);
   return cache.addAll([
-    "/website",
-    "/website/index.html",
-    "/website/assets/index.js",
-    "/website/assets/MediaPlayer.js",
-    "/website/assets/plugins/AutoPlay.js",
-    "/website/assets/plugins/AutoPause.js",
-    "/website/assets/index.css",
-    "/website/assets/BigBuckBunny.mp4"
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website",
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/index.html",
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/index.js",
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/MediaPlayer.js",
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/plugins/AutoPlay.js",
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/plugins/AutoPause.js",
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/index.css",
+    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/BigBuckBunny.mp4"
   ]);
 }
 
