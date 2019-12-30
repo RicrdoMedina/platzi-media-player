@@ -9,6 +9,7 @@ MediaPlayer.prototype._initPligins = function() {
   const player = {
     play: () => this.play(),
     pause: () => this.pause(),
+    isPaused: () => this.isPaused(),
     media: this.media,
     get muted() {
       return this.media.muted;
