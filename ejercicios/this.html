@@ -25,7 +25,7 @@
 
       // this en el scope de una función en strict mode
       function whoIsThisStrict() {
-        'use strict';
+        "use strict";
         return this;
       }
 
@@ -33,10 +33,11 @@
 
       // this en el contexto de un objeto
       const person = {
-        name: 'Gabriel',
+        name: "Gabriel",
         saludar: function() {
+          console.log(`this ****: ${this}`);
           console.log(`Hola soy ${this.name}`);
-        },
+        }
       };
 
       person.saludar();
@@ -55,7 +56,7 @@
         console.log(`Me llamo ${this.name}`);
       };
 
-      const angela = new Person('Angela');
+      const angela = new Person("Angela");
       angela.saludar();
     </script>
   </body>
