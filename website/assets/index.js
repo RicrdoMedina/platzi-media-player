@@ -17,7 +17,7 @@ muteOrUnmute.onclick = () =>
   player.isMuted() ? player.unmute() : player.mute();
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js").catch(error => {
+  navigator.serviceWorker.register("../sw.js").catch(error => {
     console.log("*** ERROR ***", error.message);
   });
 }
