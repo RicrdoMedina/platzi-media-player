@@ -17,7 +17,11 @@ muteOrUnmute.onclick = () =>
   player.isMuted() ? player.unmute() : player.mute();
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("../sw.js").catch(error => {
-    console.log("*** ERROR ***", error.message);
-  });
+  navigator.serviceWorker
+    .register(
+      "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/sw.js"
+    )
+    .catch(error => {
+      console.log("*** ERROR ***", error.message);
+    });
 }
