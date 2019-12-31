@@ -22,14 +22,14 @@ self.addEventListener("fetch", event => {
 async function precache() {
   const cache = await caches.open(VERSION);
   return cache.addAll([
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website",
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/index.html",
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/index.js",
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/MediaPlayer.js",
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/plugins/AutoPlay.js",
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/plugins/AutoPause.js",
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/index.css",
-    "https://ricrdomedina.github.io/PlatziMediaPlayer.JS/website/assets/BigBuckBunny.mp4"
+    "/",
+    "/index.html",
+    "/assets/index.js",
+    "/assets/MediaPlayer.js",
+    "/assets/plugins/AutoPlay.js",
+    "/assets/plugins/AutoPause.js",
+    "/assets/index.css",
+    "/assets/BigBuckBunny.mp4"
   ]);
 }
 
@@ -43,6 +43,6 @@ async function cachedResponse(request) {
 async function updateCache(request) {
   const cache = await caches.open(VERSION);
   const response = await fetch(request);
-
+  if (!/^https?:$/i.test(new URL(request.url).protocol)) return;
   return cache.put(request, response);
 }
