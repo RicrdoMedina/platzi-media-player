@@ -1,4 +1,10 @@
+import MediaPlayer from "../MediaPlayer";
+
 class AutoPause {
+  private threshold: number;
+  private pausedByScroll: boolean;
+  player: MediaPlayer;
+
   constructor() {
     this.threshold = 0.25;
     this.pausedByScroll = false;
@@ -14,7 +20,7 @@ class AutoPause {
     document.addEventListener("visibilitychange", this.handleVisibilityChange);
   }
 
-  handleVisibilityChange = () => {
+  private handleVisibilityChange = () => {
     const isVisible = document.visibilityState === "visible";
     const {
       player: { play, pause }
@@ -23,11 +29,11 @@ class AutoPause {
     isVisible ? play() : pause();
   };
 
-  handlePausedByScrolling = (value = false) => {
+  private handlePausedByScrolling = (value: boolean = false) => {
     this.pausedByScroll = value;
   };
 
-  handleIntersection = entries => {
+  private handleIntersection = (entries: IntersectionObserverEntry[]) => {
     const entry = entries[0];
     const {
       threshold,

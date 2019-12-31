@@ -1,19 +1,18 @@
-// Interfaces
 enum Color {
-  Rojo = 'Rojo',
-  Verde = 'Verde',
+  rojo = "rojo",
+  verde = "verde"
 }
 
 interface Rectangulo {
   ancho: number;
   alto: number;
-  color?: Color;
+  color: Color;
 }
 
 let rect: Rectangulo = {
   ancho: 4,
   alto: 6,
-  // color: Color.Rojo,
+  color: Color.rojo
 };
 
 function area(r: Rectangulo): number {
@@ -21,7 +20,7 @@ function area(r: Rectangulo): number {
 }
 
 const areaRect = area(rect);
-console.log(areaRect);
+console.log("area rectangulo", areaRect);
 
 rect.toString = function() {
   return this.color ? `Un rectangulo ${this.color}` : `Un rectangulo`;
